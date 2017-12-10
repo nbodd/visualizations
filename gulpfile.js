@@ -5,7 +5,7 @@ var concat = require("gulp-concat");
 let minifyCSS = require('gulp-csso');
 
 gulp.task('html', function() {
-    return gulp.src('src/html/*.html')
+    return gulp.src('src/*.html')
         .pipe(gulp.dest('docs'));
 });
 
@@ -26,7 +26,7 @@ gulp.task("js", function () {
     .pipe(babel())
     .pipe(concat("all.js"))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("docs"));
+    .pipe(gulp.dest("docs/js"));
 });
 
 gulp.task('default', ['html', 'images', 'css', 'js']);
